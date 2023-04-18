@@ -1,10 +1,14 @@
-<p>layout works!</p>
 
 
-<nav>
-  <ul>
-    <li><a routerLink="/generator" routerLinkActive="active" ariaCurrentWhenActive="page">Gerador</a></li>
-    <li><a routerLink="/sobre" routerLinkActive="active" ariaCurrentWhenActive="page">Sobre</a></li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+<div class="wrap_all">
+  <nav>
+    <ul>
+      <li><a routerLink="/generator" routerLinkActive="active" ariaCurrentWhenActive="page">Gerador</a></li>
+      <li><a routerLink="/sobre" routerLinkActive="active" ariaCurrentWhenActive="page">Sobre</a></li>
+    </ul>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

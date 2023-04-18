@@ -1,94 +1,102 @@
-<main>
+<div>
   <div class="form_heading">
     <h2>Gerador de descrição</h2>
 
     <p>Insira as informações sobre o livro</p>
   </div>
 
-<div class="form_box">
-
-<button (click)="log()">log</button>
-
-<button (click)="clean()">clean</button>
+  <button (click)="log()">log</button>
 
 
-<form [formGroup]="description" >
+<div>
 
 
-        <label>
-          Ano{{description.controls.ano.value}}: <input type="text" name="ano" formControlName="ano"><small>(Caso não possua ISBN)</small>
+<form [formGroup]="description" class="form_box">
 
 
-        </label>
-        <br/>
-      <label>Livro{{description.value.uso}}:
 
-          <select name="uso" id="uso" formControlName="uso">
-            <option value="Livro Usado">Livro Usado</option>
-            <option value="Livro Novo">Livro Novo</option>
+      <div class="book_form">
 
-          </select>
+        <button (click)="clean()">clean</button>
 
-      </label>
-      <br/>
-      <label>Estado geral:
+                <label>
+                  Ano: <input type="text" name="ano" formControlName="ano"><small>(Caso não possua ISBN)</small>
 
-        <select name="estado" id="estado" formControlName="estado">
-          <option value="Boas condições">Boas condições</option>
-          <option value="Condições razoáveis">Condições razoáveis</option>
-          <option value="Desgastado">Desgastado</option>
-        </select>
-      </label>
 
-      <br/>
-      <label>Anotações:
+                </label>
+                <br/>
+              <label>livro:
 
-        <select name="anotacoes" id="anotacoes" formControlName="anotacoes">
-          <option value="Sem anotações ou grifos">Sem anotações ou grifos</option>
-          <option value="Contém alguns grifos e/ou anotações">Contém alguns grifos e anotações</option>
-          <option value="Contém vários grifos e/ou anotações">Contém vários grifos e anotações</option>
-          <option value="Contém exercícios resolvidos">Contém exercícios resolvidos</option>
-        </select>
-      </label>
+                  <select name="uso" id="uso" formControlName="uso">
+                    <option value="Livro Usado">Livro Usado</option>
+                    <option value="Livro Novo">Livro Novo</option>
 
-      <br/>
-      <label>Capa e lombada:
+                  </select>
 
-      <select name="capa" id="capa" formControlName="capa">
-        <option value="Bem conservada">Bem conservada</option>
-        <option value="Desgastada nas bordas">Desgastada nas bordas</option>
-        <option value="Contém sujidades e desgastes">Contém sujidades e desgastes</option>
-        <option value="Solta do miolo">Solta do miolo</option>
+              </label>
+              <br/>
+              <label>Estado geral:
 
-      </select>
-      </label>
+                <select name="estado" id="estado" formControlName="estado">
+                  <option value="Boas condições">Boas condições</option>
+                  <option value="Condições razoáveis">Condições razoáveis</option>
+                  <option value="Desgastado">Desgastado</option>
+                </select>
+              </label>
 
-      <br/>
-      <label>Folhas:
+              <br/>
+              <label>Anotações:
 
-      <select name="folhas" id="folhas" formControlName="folhas">
-        <option value=""></option>
-        <option value="Levemente amareladas">Levemente amareladas</option>
-        <option value="Amareladas pelo tempo">Amareladas pelo tempo</option>
+                <select name="anotacoes" id="anotacoes" formControlName="anotacoes">
+                  <option value="Sem anotações ou grifos">Sem anotações ou grifos</option>
+                  <option value="Contém alguns grifos e/ou anotações">Contém alguns grifos e anotações</option>
+                  <option value="Contém vários grifos e/ou anotações">Contém vários grifos e anotações</option>
+                  <option value="Contém exercícios resolvidos">Contém exercícios resolvidos</option>
+                </select>
+              </label>
 
-      </select>
-      </label>
+              <br/>
+              <label>Capa e lombada:
 
-      <br/>
-      <label>Nome anotado:
+              <select name="capa" id="capa" formControlName="capa">
+                <option value="Bem conservada">Bem conservada</option>
+                <option value="Desgastada nas bordas">Desgastada nas bordas</option>
+                <option value="Contém sujidades e desgastes">Contém sujidades e desgastes</option>
+                <option value="Solta do miolo">Solta do miolo</option>
 
-      <select name="nome" id="nome" formControlName="nome">
-        <option value=""></option>
-        <option value="Contém nome/carimbo do antigo dono">Contém nome/carimbo do antigo dono</option>
+              </select>
+              </label>
 
-      </select>
-      </label>
-      <br/>
-      <br/>
-      <label>
-      Obs: <textarea name="obs" formControlName="obs"></textarea><br/>
+              <br/>
+              <label>Folhas:
 
-      </label>
+              <select name="folhas" id="folhas" formControlName="folhas">
+                <option value=""></option>
+                <option value="Levemente amareladas">Levemente amareladas</option>
+                <option value="Amareladas pelo tempo">Amareladas pelo tempo</option>
+
+              </select>
+              </label>
+
+              <br/>
+              <label>Nome anotado:
+
+              <select name="nome" id="nome" formControlName="nome">
+                <option value=""></option>
+                <option value="Contém nome/carimbo do antigo dono">Contém nome/carimbo do antigo dono</option>
+
+              </select>
+              </label>
+              <br/>
+              <br/>
+              <label>
+              Obs: <textarea name="obs" formControlName="obs"></textarea><br/>
+
+              </label>
+    </div>
+
+    <div class="controle_interno">
+
 
       <br/>
       <h2>Controle interno:</h2>
@@ -100,24 +108,27 @@
       <br/>
       <label>Bolinha:
       <select name="bolinha" id="bolinha" formControlName="bolinha">
-        <option value="Amarela"></option>
+        <option value=""></option>
         <option value="Amarela">Amarela</option>
-        <option value="Amarela">Laranja</option>
-        <option value="Amarela">Prata</option>
-        <option value="Amarela">Vermelha</option>
+        <option value="Laranja">Laranja</option>
+        <option value="Prata">Prata</option>
+        <option value="Vermelha">Vermelha</option>
 
       </select>
       </label>
 
+    </div>
 
-</form>
 
-<button (click)="setBookDescription()">Gerar</button>
-<div style="white-space: pre-line">{{bookDescription}}</div>
+  <div class="description_box">
+    <button (click)="setBookDescription()">Gerar</button>
+
+    <div style="white-space: pre-line">{{bookDescription}}</div>
+  </div>
+
+  </form>
 
 </div>
-<pre>
-{{description.value | json }}
-</pre>
-</main>
+
+</div>
 

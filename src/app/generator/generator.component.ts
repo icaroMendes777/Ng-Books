@@ -33,7 +33,7 @@ export class GeneratorComponent {
     codigo:new FormControl((''),
         [Validators.required,Validators.minLength(5)]),
     bolinha: new FormControl('',
-        [Validators.required]),
+        [Validators.required, this.noWhitespaceValidator]),
   });
 
   bookDescription = '';
@@ -57,9 +57,10 @@ export class GeneratorComponent {
 
     let error = '';
 
-    if(! this.description.controls.codigo.value) error+='insira o código de barras! \n'
+    if( this.description.controls.codigo.errors ) error+='Insira um código de barras válido! \n';
 
-    if(! this.description.controls.bolinha.value) error+='insira a cor da bolinha!';
+
+    if( this.description.controls.bolinha.errors ) error+='Insira a cor da bolinha!';
 
     if(error){
       alert(error);
@@ -121,7 +122,7 @@ export class GeneratorComponent {
       description += 'Obs:'+this.description.controls.obs.value;
       description +=breakLine;
     }
-
+    description +=breakLine;
     description += '-------------';
     description +=breakLine;
 
@@ -137,10 +138,13 @@ export class GeneratorComponent {
       description +=breakLine;
     }
 
-
-
-
     this.bookDescription = description;
+  }
+
+
+  noWhitespaceValidator(control: FormControl) {
+    if(control.value=='') return { 'whitespace': true };
+    return null;
   }
 
 }

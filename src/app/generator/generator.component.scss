@@ -1,8 +1,30 @@
 
 
+
 .form_box{
+
+  display:grid;
+  grid-template-areas: 'book intern'
+                       'book output';
+  align-items: start;
+
+  gap: 1rem;
   label{
     margin:0.1rem;
     display:block;
   }
+}
+
+.book_form{
+  grid-area: book;
+}
+
+
+.controle_interno{
+  grid-area: intern;
+}
+
+
+.description_box{
+  grid-area: output;
 }
